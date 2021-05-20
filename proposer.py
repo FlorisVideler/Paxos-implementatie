@@ -12,6 +12,7 @@ class Proposer(Computer):
         self.accepted = set()
         self.rejected = set()
         self.state = 'PROPOSE'
+        self.failed = False
 
     def deliver_message(self, m: Message):
         if m.type == 'PROPOSE':

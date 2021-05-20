@@ -9,6 +9,7 @@ class Acceptor(Computer):
         self.n = sim.n
         self.prior_promised_id = 0
         self.prior_promised_value = None
+        self.failed = False
 
     def deliver_message(self, m: Message):
         if m.type == 'PREPARE':

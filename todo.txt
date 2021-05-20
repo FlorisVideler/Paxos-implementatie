@@ -1,4 +1,4 @@
-- Dubbele tick 026
+- Dubbele tick 026 --DONE
 - Text formatting
 - Prior
 - Consensus print op einde
