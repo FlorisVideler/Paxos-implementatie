@@ -39,10 +39,8 @@ class Simulation:
             tick_output = f'{tick}: '
             for event in self.events:
                 if int(event[0]) == tick:
-                    tick_done = True
                     event_type = event[1]
                     if event_type == 'FAIL':
-                        tick_done = False  # bij een FAIL kan die daarna ook nog iets uit de que doen
                         if event[2] == 'PROPOSER':
                             tick_output += f'P{int(event[3])} **kapot**'
                             print(tick_output)
@@ -53,7 +51,6 @@ class Simulation:
                             self.a[int(event[3]) - 1].failed = True
                         break
                     elif event_type == 'RECOVER':
-                        tick_done = False  # bij een RECOVER kan die daarna ook nog iets uit de que doen
                         if event[2] == 'PROPOSER':
                             tick_output += f'P{int(event[3])} **gerepareerd**'
                             print(tick_output)
@@ -64,6 +61,7 @@ class Simulation:
                             self.a[int(event[3]) - 1].failed = False
                         break
                     elif event_type == 'PROPOSE':
+                        tick_done = True
                         m = Message(None, self.p[int(event[2]) - 1], event[1], int(event[3]), None)
                         tick_output += m.dst.deliver_message(m)
             if not tick_done:
