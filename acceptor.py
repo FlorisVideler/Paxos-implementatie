@@ -11,6 +11,12 @@ class Acceptor(Computer):
         self.prior_promised_value = None
         self.failed = False
 
+    def get_prior(self):
+        if self.prior_promised_value is None:
+            return None
+        else:
+            return {'n': self.prior_promised_id, 'v': self.prior_promised_value}
+
     def deliver_message(self, m: Message):
         if m.type == 'PREPARE':
             self.handle_prepare(m)
@@ -21,19 +27,19 @@ class Acceptor(Computer):
 
     def handle_accept(self, m):
         if m.id < self.prior_promised_id:
-            respond_m = Message(self, m.src, 'REJECTED', None, m.id)
+            respond_m = Message(self, m.src, 'REJECTED', None, m.id, None)
         else:
             self.prior_promised_id = m.id
             self.prior_promised_value = m.value
-            respond_m = Message(self, m.src, 'ACCEPTED', m.value, m.id)
+            respond_m = Message(self, m.src, 'ACCEPTED', m.value, m.id, None)
         self.n.queue_message(respond_m)
 
     def handle_prepare(self, m):
         if m.id < self.prior_promised_id:
-            respond_m = Message(self, m.src, 'REJECTED', None, m.id)
+            respond_m = Message(self, m.src, 'REJECTED', None, m.id, None)
         else:
+            respond_m = Message(self, m.src, 'PROMISE', None, m.id, self.get_prior())
             self.prior_promised_id = m.id
-            respond_m = Message(self, m.src, 'PROMISE', None, m.id)
         self.n.queue_message(respond_m)
 
     def __str__(self):
