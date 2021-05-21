@@ -12,6 +12,7 @@ class Simulation:
     t_max = 0
     events = []
     propose_counter = 0
+    accepted = None
 
     def __init__(self, input_file):
         self.read_input_file(input_file)
@@ -62,10 +63,15 @@ class Simulation:
 
                     elif event_type == 'PROPOSE':
                         tick_done = True
-                        m = Message(None, self.p[int(event[2]) - 1], event[1], int(event[3]), None)
+                        m = Message(None, self.p[int(event[2]) - 1], event[1], int(event[3]), None, None)
                         tick_output += m.dst.deliver_message(m)
             if not tick_done:
                 m = self.n.extract_message()
                 if m:
                     tick_output += m.dst.deliver_message(m)
             print(tick_output)
+        for proposer in self.p:
+            if proposer.value is not None:
+                print(f'P{proposer.id} heeft wel consensus (voorgesteld: {proposer.proposed_value}, geaccepteerd: {self.accepted})')
+            else:
+                print(f'P{proposer.id} heeft geen consensus')
