@@ -35,7 +35,7 @@ class Simulation:
 
     def start(self):
         for tick in range(self.t_max):
-            tick_done = False
+            tick_done = False  # Tick is done when a message is send!
             tick_output = f'{tick}: '
             for event in self.events:
                 if int(event[0]) == tick:
@@ -49,7 +49,7 @@ class Simulation:
                         elif event[2] == 'ACCEPTOR':
                             tick_output += f'A{int(event[3])} **kapot**'
                             self.a[int(event[3]) - 1].failed = True
-                        break
+
                     elif event_type == 'RECOVER':
                         if event[2] == 'PROPOSER':
                             tick_output += f'P{int(event[3])} **gerepareerd**'
@@ -59,7 +59,7 @@ class Simulation:
                         elif event[2] == 'ACCEPTOR':
                             tick_output += f'A{int(event[3])} **gerepareerd**'
                             self.a[int(event[3]) - 1].failed = False
-                        break
+
                     elif event_type == 'PROPOSE':
                         tick_done = True
                         m = Message(None, self.p[int(event[2]) - 1], event[1], int(event[3]), None)
