@@ -1,4 +1,2 @@
-- Dubbele tick 026 --DONE
 - Text formatting
-- Prior
-- Consensus print op einde
+- Reset accepted value na consencus.
