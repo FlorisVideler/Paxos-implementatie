@@ -3,7 +3,7 @@ from message import Message
 
 
 class Proposer(Computer):
-    def __init__(self, _id,  sim):
+    def __init__(self, _id, sim):
         self.proposed_value = None
         self.id = _id
         self.sim = sim
@@ -23,7 +23,7 @@ class Proposer(Computer):
             self.handle_propose()
             return f' -> P{m.dst.id} {m.type} {m.value}'
         elif m.type == 'REJECTED':
-            if m.id == self.p_id :
+            if m.id == self.p_id:
                 self.rejected.add(m.src)
             if len(self.rejected) > len(self.sim.a) // 2:
                 self.handle_propose()
