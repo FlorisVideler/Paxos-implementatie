@@ -6,6 +6,6 @@ class Learner(Computer):
         self.id = _id
         self.sim = sim
 
-    def deliver_message(self, m):
+    def deliver_message(self, m: Message):
         if m.type == 'SUCCESS':
-            pass
+            print('LEARNER', m.value)

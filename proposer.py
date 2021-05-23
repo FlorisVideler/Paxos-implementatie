@@ -47,8 +47,13 @@ class Proposer(Computer):
             if m.id == self.p_id and m.type == self.state:
                 self.accepted.add(m.src)
             if len(self.accepted) > len(self.sim.a) // 2:
+                # Put this in function
                 self.sim.accepted = m.value
-                # print('accepted')
+                self.sim.accepted_n = m.id
+            #     if len(self.n.queue) == 0:
+            #         for learner in self.n.l:
+            #             respond_m = Message(self, learner, 'SUCCESS', m.value, m.id, None)
+            #             self.n.queue_message(respond_m)
                 self.accepted = set()
                 self.rejected = set()
             return f'A{m.src.id} -> P{m.dst.id} {m.type} n={m.id} v={self.value}'
