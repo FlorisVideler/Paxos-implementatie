@@ -1,2 +1,0 @@
-- Text formatting
-- Reset accepted value na consencus.
