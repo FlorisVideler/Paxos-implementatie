@@ -85,14 +85,14 @@ class Simulation:
                     if no_msg == 2:
                         no_msg = 0
                         if self.accepted_n != submitted:
-                            submitted = self.accepted_n
-                            self.success()
                             for proposer in self.p:
                                 if proposer.value is not None:
-                                    print(
-                                        f'P{proposer.id} heeft wel consensus (voorgesteld: {proposer.proposed_value}, geaccepteerd: {self.accepted})')
+                                    print(f'P{proposer.id} heeft wel consensus (voorgesteld: {proposer.proposed_value}, geaccepteerd: {self.accepted})')
                                 else:
                                     print(f'P{proposer.id} heeft geen consensus')
+                            submitted = self.accepted_n
+                            self.success()
+
                     else:
                         print(f'{tick:04}: ')
 
