@@ -6,6 +6,7 @@ import numpy as np
 class Learner(Computer):
     def __init__(self, _id, sim):
         self.id = _id
+        self.failed = False
         self.sim = sim
         self.matrices = {}
         self.allowed_chars = 'abcdefghijklmnopqrstuvwxyz *'
