@@ -1,14 +1,14 @@
 # Opdracht 3: Productieklaar maken van een gedistribueerde data-analyse: Paxos-implementatie
 
 ## Input examples
-Voorbeeld #1
+Example #1
 ```
 1 3 15
 0 PROPOSE 1 42
 0 END
 ```
 
-Voorbeeld #2
+Example #2
 ```
 2 3 50
 0 PROPOSE 1 42
@@ -18,7 +18,7 @@ Voorbeeld #2
 0 END
 ```
 
-Voorbeeld #3
+Example #3
 ```
 1 3 1 10000 
 0 PROPOSE 1 nl: g
