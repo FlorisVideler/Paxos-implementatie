@@ -11,7 +11,7 @@ class Acceptor:
         self.prior_promised_value = None
         self.failed = False
 
-    def get_prior(self) -> Optional[None, dict]:
+    def get_prior(self) -> Optional[dict]:
         if self.prior_promised_value is None:
             return None
         else:

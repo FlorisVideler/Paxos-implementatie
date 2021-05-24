@@ -9,7 +9,7 @@ class Network:
     def queue_message(self, m: Message) -> None:
         self.queue.append(m)
 
-    def extract_message(self) -> Optional[None, Message]:
+    def extract_message(self) -> Optional[Message]:
         index = 0
         while self.queue:
             m = self.queue[index]

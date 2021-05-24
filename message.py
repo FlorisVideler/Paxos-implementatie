@@ -2,7 +2,7 @@ from typing import Optional
 
 
 class Message:
-    def __init__(self, src: object, dst: object, _type: str, value: Optional[None, str], _id: int, prior: Optional[None, dict]) -> None:
+    def __init__(self, src: object, dst: object, _type: str, value: Optional[str], _id: Optional[int], prior: Optional[dict]) -> None:
         self.src = src
         self.dst = dst
         self.type = _type

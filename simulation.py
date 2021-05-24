@@ -18,6 +18,8 @@ class Simulation:
         self.accepted_n = 0
         self.current_tick = 0
         self.read_input_file(input_file)
+        self.no_msg = 0
+        self.submitted = 0
 
     def read_input_file(self, input_file: str) -> None:
         with open(input_file, 'r') as file:
@@ -40,60 +42,56 @@ class Simulation:
             self.l.append(Learner(i + 1, self))
 
     def start(self) -> None:
-        no_msg = 0
-        submitted = 0
         for tick in range(self.t_max):
             self.current_tick = tick
             tick_done = False  # Tick is done when a message is send!
-            tick_output = f'{tick}: '
             for event in self.events:
                 if int(event[0]) == tick:
                     event_type = event[1]
                     if event_type == 'FAIL':
                         if event[2] == 'PROPOSER':
-                            tick_output += f'P{int(event[3])} **kapot**'
-                            print(tick_output)
-                            tick_output = f'{tick}: '
+                            print(f'{tick:04}: P{int(event[3])} **kapot**')
                             self.p[int(event[3]) - 1].failed = True
                         elif event[2] == 'ACCEPTOR':
-                            tick_output += f'A{int(event[3])} **kapot**'
+                            print(f'{tick:04}: A{int(event[3])} **kapot**')
                             self.a[int(event[3]) - 1].failed = True
 
                     elif event_type == 'RECOVER':
                         if event[2] == 'PROPOSER':
-                            tick_output += f'P{int(event[3])} **gerepareerd**'
-                            print(tick_output)
-                            tick_output = f'{tick}: '
+                            print(f'{tick:04}: P{int(event[3])} **gerepareerd**')
                             self.p[int(event[3]) - 1].failed = False
                         elif event[2] == 'ACCEPTOR':
-                            tick_output += f'A{int(event[3])} **gerepareerd**'
+                            print(f'{tick:04}: A{int(event[3])} **gerepareerd**')
                             self.a[int(event[3]) - 1].failed = False
 
                     elif event_type == 'PROPOSE':
                         tick_done = True
                         m = Message(None, self.p[int(event[2]) - 1], event[1], event[3], None, None)
-                        tick_output += m.dst.deliver_message(m)
+                        m.dst.deliver_message(m)
             if not tick_done:
-                m = self.n.extract_message()
-                if m:
-                    tick_output += m.dst.deliver_message(m)
-                    no_msg = 0
-                else:
-                    no_msg += 1
-                    if no_msg == 2:
-                        no_msg = 0
-                        if self.accepted_n != submitted:
-                            for proposer in self.p:
-                                if proposer.value is not None:
-                                    print(
-                                        f'P{proposer.id} heeft wel consensus (voorgesteld: {proposer.proposed_value}, geaccepteerd: {self.accepted})')
-                                else:
-                                    print(f'P{proposer.id} heeft geen consensus')
-                            submitted = self.accepted_n
-                            self.success()
+                self.msg_from_queue()
+                        
+    def msg_from_queue(self) -> None:
+        m = self.n.extract_message()
+        if m:
+            m.dst.deliver_message(m)
+            self.no_msg = 0
+        else:
+            self.no_msg += 1
+            if self.no_msg == 2:
+                self.no_msg = 0
+                if self.accepted_n != self.submitted:
+                    for proposer in self.p:
+                        if proposer.value is not None:
+                            print(
+                                f'P{proposer.id} heeft wel consensus (voorgesteld: {proposer.proposed_value}, geaccepteerd: {self.accepted})')
+                        else:
+                            print(f'P{proposer.id} heeft geen consensus')
+                    self.submitted = self.accepted_n
+                    self.success()
 
-                    else:
-                        print(f'{tick:04}: ')
+            else:
+                print(f'{self.current_tick:04}: ')
 
     def success(self) -> None:
         for learner in self.l:
