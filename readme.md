@@ -1,4 +1,6 @@
 # Opdracht 3: Productieklaar maken van een gedistribueerde data-analyse: Paxos-implementatie
+Niels Bijl 1754339 <br>
+Floris Videler 1758374
 
 ## Input examples
 Example #1
