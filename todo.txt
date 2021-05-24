@@ -1,4 +1,0 @@
-- Message handling opdelen in functies
-- Classes in aparte map
-- Meer inputs
-- Meer documentatie in functies
