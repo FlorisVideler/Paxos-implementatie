@@ -1,9 +1,8 @@
-from computer import Computer
 from message import Message
 
 
-class Acceptor(Computer):
-    def __init__(self, _id, sim):
+class Acceptor():
+    def __init__(self, _id: int, sim: 'Simulation'):
         self.id = _id
         self.sim = sim
         self.n = sim.n
@@ -27,7 +26,7 @@ class Acceptor(Computer):
             print(f'{self.sim.current_tick:04}: P{m.src.id} -> A{self.id} {m.type} n={m.id} v={m.value}')
             return f'P{m.src.id} -> A{self.id} {m.type} n={m.id} v={m.value}'
 
-    def handle_accept(self, m):
+    def handle_accept(self, m: Message):
         if m.id < self.prior_promised_id:
             respond_m = Message(self, m.src, 'REJECTED', None, m.id, None)
         else:
@@ -37,7 +36,7 @@ class Acceptor(Computer):
 
         self.n.queue_message(respond_m)
 
-    def handle_prepare(self, m):
+    def handle_prepare(self, m: Message):
         if m.id < self.prior_promised_id:
             respond_m = Message(self, m.src, 'REJECTED', None, m.id, None)
         else:

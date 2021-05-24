@@ -1,5 +1,5 @@
 class Message:
-    def __init__(self, src, dst, _type, value, _id, prior):
+    def __init__(self, src: object, dst: object, _type: str, value: str, _id: int, prior: dict):
         self.src = src
         self.dst = dst
         self.type = _type

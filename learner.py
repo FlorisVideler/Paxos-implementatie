@@ -4,7 +4,7 @@ import numpy as np
 
 
 class Learner(Computer):
-    def __init__(self, _id, sim):
+    def __init__(self, _id: int, sim: 'Simulation'):
         self.id = _id
         self.failed = False
         self.sim = sim

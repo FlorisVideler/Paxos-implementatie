@@ -1,12 +1,14 @@
+from message import Message
+
+
 class Network:
     queue = []
 
-    def queue_message(self, m):
+    def queue_message(self, m: Message):
         self.queue.append(m)
 
     def extract_message(self):
         index = 0
-        # print(self.queue)
         while self.queue:
             m = self.queue[index]
             if m.src.failed is False and m.dst.failed is False:

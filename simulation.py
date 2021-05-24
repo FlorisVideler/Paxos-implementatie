@@ -6,22 +6,20 @@ from message import Message
 
 
 class Simulation:
-    p = []
-    a = []
-    l = []
-    e = []
-    n = Network()
-    t_max = 0
-    events = []
-    propose_counter = 0
-    accepted = None
-    accepted_n = 0
-    current_tick = 0
-
-    def __init__(self, input_file):
+    def __init__(self, input_file: str):
+        self.p = []
+        self.a = []
+        self.l = []
+        self.n = Network()
+        self.t_max = 0
+        self.events = []
+        self.propose_counter = 0
+        self.accepted = None
+        self.accepted_n = 0
+        self.current_tick = 0
         self.read_input_file(input_file)
 
-    def read_input_file(self, input_file):
+    def read_input_file(self, input_file: str):
         with open(input_file, 'r') as file:
             events = file.readlines()
             events = list(map(lambda x: x.rstrip('\n').split(' ', 3), events))
@@ -31,7 +29,7 @@ class Simulation:
             self.t_max = int(t_max)
             self.setup_computers(n_p, n_a, n_l)
 
-    def setup_computers(self, n_p, n_a, n_l):
+    def setup_computers(self, n_p: int, n_a: int, n_l: int):
         for i in range(int(n_p)):
             self.p.append(Proposer(i + 1, self))
 
@@ -87,7 +85,8 @@ class Simulation:
                         if self.accepted_n != submitted:
                             for proposer in self.p:
                                 if proposer.value is not None:
-                                    print(f'P{proposer.id} heeft wel consensus (voorgesteld: {proposer.proposed_value}, geaccepteerd: {self.accepted})')
+                                    print(
+                                        f'P{proposer.id} heeft wel consensus (voorgesteld: {proposer.proposed_value}, geaccepteerd: {self.accepted})')
                                 else:
                                     print(f'P{proposer.id} heeft geen consensus')
                             submitted = self.accepted_n
@@ -95,8 +94,6 @@ class Simulation:
 
                     else:
                         print(f'{tick:04}: ')
-
-
 
     def success(self):
         for learner in self.l:

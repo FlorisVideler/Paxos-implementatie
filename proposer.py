@@ -1,9 +1,8 @@
-from computer import Computer
 from message import Message
 
 
-class Proposer(Computer):
-    def __init__(self, _id, sim):
+class Proposer():
+    def __init__(self, _id: int, sim: 'Simulation'):
         self.proposed_value = None
         self.id = _id
         self.sim = sim
@@ -63,7 +62,7 @@ class Proposer(Computer):
             print(f'{self.sim.current_tick:04}: A{m.src.id} -> P{m.dst.id} {m.type} n={m.id} v={self.value}')
             return f'A{m.src.id} -> P{m.dst.id} {m.type} n={m.id} v={self.value}'
 
-    def handle_promise(self, m):
+    def handle_promise(self):
         self.state = 'ACCEPTED'
         for acceptor in self.sim.a:
             respond_m = Message(self, acceptor, 'ACCEPT', self.value, self.p_id, None)
