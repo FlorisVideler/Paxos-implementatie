@@ -2,6 +2,7 @@ from computer import Computer
 from message import Message
 import numpy as np
 
+
 class Learner(Computer):
     def __init__(self, _id, sim):
         self.id = _id
@@ -20,6 +21,8 @@ class Learner(Computer):
         data = m_split[1]
         if lang not in self.matrices:
             self.matrices[lang] = np.zeros((28, 28))
+        if len(data) == 1:
+            data += ' '
         self.matrices[lang][self.allowed_chars.index(data[0]), self.allowed_chars.index(data[1])] += 1
         self.count_matrices()
 

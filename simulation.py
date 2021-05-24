@@ -23,7 +23,7 @@ class Simulation:
     def read_input_file(self, input_file):
         with open(input_file, 'r') as file:
             events = file.readlines()
-            events = list(map(lambda x: x.rstrip().split(' ', 3), events))
+            events = list(map(lambda x: x.rstrip('\n').split(' ', 3), events))
             n_p, n_a, n_l, t_max = events[0]
             events.pop(0)
             self.events = events
@@ -85,14 +85,20 @@ class Simulation:
                         if self.accepted_n != submitted:
                             submitted = self.accepted_n
                             self.success()
+                            for proposer in self.p:
+                                if proposer.value is not None:
+                                    print(
+                                        f'P{proposer.id} heeft wel consensus (voorgesteld: {proposer.proposed_value}, geaccepteerd: {self.accepted})')
+                                else:
+                                    print(f'P{proposer.id} heeft geen consensus')
 
             print(tick_output)
-        for proposer in self.p:
-            if proposer.value is not None:
-                print(f'P{proposer.id} heeft wel consensus (voorgesteld: {proposer.proposed_value}, geaccepteerd: {self.accepted})')
-            else:
-                print(f'P{proposer.id} heeft geen consensus')
+
 
     def success(self):
         for learner in self.l:
             learner.deliver_message(Message(self, learner, 'SUCCESS', self.accepted, None, None))
+
+        for acceptor in self.a:
+            acceptor.prior_promised_value = None
+            acceptor.prior_promised_id = 0

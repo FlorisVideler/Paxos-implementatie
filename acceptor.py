@@ -32,6 +32,7 @@ class Acceptor(Computer):
             self.prior_promised_id = m.id
             self.prior_promised_value = m.value
             respond_m = Message(self, m.src, 'ACCEPTED', m.value, m.id, None)
+
         self.n.queue_message(respond_m)
 
     def handle_prepare(self, m):
