@@ -1,8 +1,8 @@
-from proposer import Proposer
-from acceptor import Acceptor
-from learner import Learner
-from network import Network
-from message import Message
+from classes.proposer import Proposer
+from classes.acceptor import Acceptor
+from classes.learner import Learner
+from classes.network import Network
+from classes.message import Message
 
 
 class Simulation:

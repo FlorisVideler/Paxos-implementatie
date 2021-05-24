@@ -1,4 +1,4 @@
-from message import Message
+from classes.message import Message
 from typing import Optional
 
 
