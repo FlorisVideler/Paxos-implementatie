@@ -26,6 +26,11 @@ class Simulation:
         self.submitted = 0
 
     def read_input_file(self, input_file: str) -> None:
+        """
+        Loads the input file.
+        :param input_file: Path to the input file.
+        :return: None.
+        """
         with open(input_file, 'r') as file:
             events = file.readlines()
             events = list(map(lambda x: x.rstrip('\n').split(' ', 3), events))
@@ -36,6 +41,13 @@ class Simulation:
             self.setup_computers(n_p, n_a, n_l)
 
     def setup_computers(self, n_p: int, n_a: int, n_l: int) -> None:
+        """
+        Initializes all the computers.
+        :param n_p: Number of Proposers.
+        :param n_a: Number of Acceptors.
+        :param n_l: Number of Learners.
+        :return: None.
+        """
         for i in range(int(n_p)):
             self.p.append(Proposer(i + 1, self))
 
@@ -46,6 +58,10 @@ class Simulation:
             self.l.append(Learner(i + 1, self))
 
     def start(self) -> None:
+        """
+        Runs the simulations.
+        :return: None.
+        """
         for tick in range(self.t_max):
             self.current_tick = tick
             tick_done = False  # Tick is done when a message is send!
@@ -76,6 +92,10 @@ class Simulation:
                 self.msg_from_queue()
                         
     def msg_from_queue(self) -> None:
+        """
+        Handles getting messages from the queue.
+        :return: None
+        """
         m = self.n.extract_message()
         if m:
             m.dst.receive_message(m)
@@ -98,6 +118,10 @@ class Simulation:
                 print(f'{self.current_tick:04}: ')
 
     def success(self) -> None:
+        """
+        Communicates with the Learners.
+        :return:
+        """
         for learner in self.l:
             learner.receive_message(Message(self, learner, 'SUCCESS', self.accepted, None, None))
 
