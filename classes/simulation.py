@@ -102,9 +102,9 @@ class Simulation:
             m.dst.receive_message(m)
             self.no_msg = 0
         else:
-            # If there are no messages for 2 ticks we say there is consensus.
+            # If there are no messages for 7 ticks we say there is consensus.
             self.no_msg += 1
-            if self.no_msg == 2:
+            if self.no_msg == 7:
                 self.no_msg = 0
                 if self.accepted_n != self.submitted:
                     for proposer in self.p:

@@ -31,8 +31,16 @@ class Proposer:
         elif m.type == 'REJECTED':
             self.handle_rejected(m)
         elif m.type == 'PROMISE':
+            prior = m.prior
+            # Only print prior if there is a prior.
+            if prior is None:
+                print(f'{self.sim.current_tick:04}: A{m.src.id} -> P{m.dst.id} {m.type} n={m.id} (Prior: None)')
+            else:
+                self.value = prior['v']
+                print(f'{self.sim.current_tick:04}: A{m.src.id} -> P{m.dst.id} {m.type} n={m.id} (Prior: n={prior["n"]}, v={prior["v"]})')
             self.poll(m)
         elif m.type == 'ACCEPTED':
+            print(f'{self.sim.current_tick:04}: A{m.src.id} -> P{m.dst.id} {m.type} n={m.id} v={self.value}')
             self.poll(m)
 
     def poll(self, m: Message) -> None:
@@ -73,7 +81,6 @@ class Proposer:
         :param m: The Message to check.
         :return: None.
         """
-        print(f'{self.sim.current_tick:04}: A{m.src.id} -> P{m.dst.id} {m.type} n={m.id} v={self.value}')
         self.sim.accepted = m.value
         self.sim.accepted_n = m.id
 
@@ -84,14 +91,6 @@ class Proposer:
         :return: None.
         """
         self.state = 'ACCEPTED'
-        prior = m.prior
-        # Only print prior if there is a prior.
-        if prior is None:
-            print(f'{self.sim.current_tick:04}: A{m.src.id} -> P{m.dst.id} {m.type} n={m.id} (Prior: None)')
-        else:
-            self.value = prior['v']
-            print(
-                f'{self.sim.current_tick:04}: A{m.src.id} -> P{m.dst.id} {m.type} n={m.id} (Prior: n={prior["n"]}, v={prior["v"]})')
         for acceptor in self.sim.a:
             respond_m = Message(self, acceptor, 'ACCEPT', self.value, self.p_id, None)
             self.n.queue_message(respond_m)
