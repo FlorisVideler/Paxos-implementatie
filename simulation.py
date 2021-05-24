@@ -16,6 +16,7 @@ class Simulation:
     propose_counter = 0
     accepted = None
     accepted_n = 0
+    current_tick = 0
 
     def __init__(self, input_file):
         self.read_input_file(input_file)
@@ -32,18 +33,19 @@ class Simulation:
 
     def setup_computers(self, n_p, n_a, n_l):
         for i in range(int(n_p)):
-            self.p.append(Proposer(i+1, self))
+            self.p.append(Proposer(i + 1, self))
 
         for i in range(int(n_a)):
-            self.a.append(Acceptor(i+1, self))
+            self.a.append(Acceptor(i + 1, self))
 
         for i in range(int(n_l)):
-            self.l.append(Learner(i+1, self))
+            self.l.append(Learner(i + 1, self))
 
     def start(self):
         no_msg = 0
         submitted = 0
         for tick in range(self.t_max):
+            self.current_tick = tick
             tick_done = False  # Tick is done when a message is send!
             tick_output = f'{tick}: '
             for event in self.events:
@@ -54,7 +56,7 @@ class Simulation:
                             tick_output += f'P{int(event[3])} **kapot**'
                             print(tick_output)
                             tick_output = f'{tick}: '
-                            self.p[int(event[3])-1].failed = True
+                            self.p[int(event[3]) - 1].failed = True
                         elif event[2] == 'ACCEPTOR':
                             tick_output += f'A{int(event[3])} **kapot**'
                             self.a[int(event[3]) - 1].failed = True
@@ -91,8 +93,9 @@ class Simulation:
                                         f'P{proposer.id} heeft wel consensus (voorgesteld: {proposer.proposed_value}, geaccepteerd: {self.accepted})')
                                 else:
                                     print(f'P{proposer.id} heeft geen consensus')
+                    else:
+                        print(f'{tick:04}: ')
 
-            print(tick_output)
 
 
     def success(self):

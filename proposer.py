@@ -21,6 +21,7 @@ class Proposer(Computer):
             self.proposed_value = m.value
             self.value = m.value
             self.handle_propose()
+            print(f'{self.sim.current_tick:04}: -> P{m.dst.id} {m.type} {m.value}')
             return f' -> P{m.dst.id} {m.type} {m.value}'
         elif m.type == 'REJECTED':
             if m.id == self.p_id:
@@ -29,6 +30,7 @@ class Proposer(Computer):
                 self.handle_propose()
                 self.accepted = set()
                 self.rejected = set()
+            print(f'{self.sim.current_tick:04}: A{m.src.id} -> P{m.dst.id} {m.type} n={m.id}')
             return f'A{m.src.id} -> P{m.dst.id} {m.type} n={m.id}'
         elif m.type == 'PROMISE':
             if m.id == self.p_id and m.type == self.state:
@@ -39,9 +41,11 @@ class Proposer(Computer):
                 self.rejected = set()
             prior = m.prior
             if prior is None:
+                print(f'{self.sim.current_tick:04}: A{m.src.id} -> P{m.dst.id} {m.type} n={m.id} (Prior: None)')
                 return f'A{m.src.id} -> P{m.dst.id} {m.type} n={m.id} (Prior: None)'
             else:
                 self.value = prior['v']
+                print(f'{self.sim.current_tick:04}: A{m.src.id} -> P{m.dst.id} {m.type} n={m.id} (Prior: n={prior["n"]}, v={prior["v"]})')
                 return f'A{m.src.id} -> P{m.dst.id} {m.type} n={m.id} (Prior: n={prior["n"]}, v={prior["v"]})'
         elif m.type == 'ACCEPTED':
             if m.id == self.p_id and m.type == self.state:
@@ -56,6 +60,7 @@ class Proposer(Computer):
             #             self.n.queue_message(respond_m)
                 self.accepted = set()
                 self.rejected = set()
+            print(f'{self.sim.current_tick:04}: A{m.src.id} -> P{m.dst.id} {m.type} n={m.id} v={self.value}')
             return f'A{m.src.id} -> P{m.dst.id} {m.type} n={m.id} v={self.value}'
 
     def handle_promise(self, m):

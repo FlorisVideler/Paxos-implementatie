@@ -20,9 +20,11 @@ class Acceptor(Computer):
     def deliver_message(self, m: Message):
         if m.type == 'PREPARE':
             self.handle_prepare(m)
+            print(f'{self.sim.current_tick:04}: P{m.src.id} -> A{self.id} {m.type} n={m.id}')
             return f'P{m.src.id} -> A{self.id} {m.type} n={m.id}'
         elif m.type == 'ACCEPT':
             self.handle_accept(m)
+            print(f'{self.sim.current_tick:04}: P{m.src.id} -> A{self.id} {m.type} n={m.id} v={m.value}')
             return f'P{m.src.id} -> A{self.id} {m.type} n={m.id} v={m.value}'
 
     def handle_accept(self, m):
