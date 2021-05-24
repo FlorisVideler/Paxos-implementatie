@@ -3,14 +3,14 @@
 ## Input examples
 Example #1
 ```
-1 3 15
+1 3 0 15
 0 PROPOSE 1 42
 0 END
 ```
 
 Example #2
 ```
-2 3 50
+2 3 0 50
 0 PROPOSE 1 42
 8 FAIL PROPOSER 1
 11 PROPOSE 2 37
