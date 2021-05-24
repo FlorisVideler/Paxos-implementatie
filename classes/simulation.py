@@ -91,6 +91,13 @@ class Simulation:
                         m.dst.receive_message(m)
             if not tick_done:
                 self.msg_from_queue()
+        if self.submitted == 0:
+            for proposer in self.p:
+                if proposer.value is not None:
+                    print(
+                        f'P{proposer.id} heeft wel consensus (voorgesteld: {proposer.proposed_value}, geaccepteerd: {self.accepted})')
+                else:
+                    print(f'P{proposer.id} heeft geen consensus')
                         
     def msg_from_queue(self) -> None:
         """
@@ -102,7 +109,7 @@ class Simulation:
             m.dst.receive_message(m)
             self.no_msg = 0
         else:
-            # If there are no messages for 7 ticks we say there is consensus.
+            # If there are no messages for 7 ticks we don't accept any new messages. And inform the learners.
             self.no_msg += 1
             if self.no_msg == 7:
                 self.no_msg = 0
@@ -118,6 +125,7 @@ class Simulation:
 
             else:
                 print(f'{self.current_tick:04}: ')
+
 
     def success(self) -> None:
         """
