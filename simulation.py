@@ -6,7 +6,11 @@ from message import Message
 
 
 class Simulation:
-    def __init__(self, input_file: str) -> None:
+    def __init__(self, input_file: str):
+        """
+        Constructor for Simulation class.
+        :param input_file: Path to the input file.
+        """
         self.p = []
         self.a = []
         self.l = []
@@ -67,14 +71,14 @@ class Simulation:
                     elif event_type == 'PROPOSE':
                         tick_done = True
                         m = Message(None, self.p[int(event[2]) - 1], event[1], event[3], None, None)
-                        m.dst.deliver_message(m)
+                        m.dst.receive_message(m)
             if not tick_done:
                 self.msg_from_queue()
                         
     def msg_from_queue(self) -> None:
         m = self.n.extract_message()
         if m:
-            m.dst.deliver_message(m)
+            m.dst.receive_message(m)
             self.no_msg = 0
         else:
             self.no_msg += 1
@@ -95,7 +99,7 @@ class Simulation:
 
     def success(self) -> None:
         for learner in self.l:
-            learner.deliver_message(Message(self, learner, 'SUCCESS', self.accepted, None, None))
+            learner.receive_message(Message(self, learner, 'SUCCESS', self.accepted, None, None))
 
         for acceptor in self.a:
             acceptor.prior_promised_value = None

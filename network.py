@@ -3,13 +3,25 @@ from typing import Optional
 
 
 class Network:
-    def __init__(self) -> None:
+    def __init__(self):
+        """
+        Constructor for Network class.
+        """
         self.queue = []
 
     def queue_message(self, m: Message) -> None:
+        """
+        Adds a Message to the queue.
+        :param m: Message to add to the queue
+        :return: None
+        """
         self.queue.append(m)
 
     def extract_message(self) -> Optional[Message]:
+        """
+        Gets the oldest Message from the queue.
+        :return: Either a Message or None
+        """
         index = 0
         while self.queue:
             m = self.queue[index]
