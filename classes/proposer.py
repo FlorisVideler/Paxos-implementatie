@@ -43,6 +43,7 @@ class Proposer:
         """
         if m.id == self.p_id and m.type == self.state:
             self.accepted.add(m.src)
+        # If a majority of the Acceptors did not return with REJECTED we accepted it.
         if len(self.accepted) > len(self.sim.a) // 2:
             if self.state == 'PROMISE':
                 self.handle_promise(m)
@@ -59,6 +60,7 @@ class Proposer:
         """
         if m.id == self.p_id:
             self.rejected.add(m.src)
+        # If a majority of the Acceptors did return with REJECTED we reject it and start over.
         if len(self.rejected) > len(self.sim.a) // 2:
             self.handle_propose(m)
             self.accepted = set()
@@ -83,6 +85,7 @@ class Proposer:
         """
         self.state = 'ACCEPTED'
         prior = m.prior
+        # Only print prior if there is a prior.
         if prior is None:
             print(f'{self.sim.current_tick:04}: A{m.src.id} -> P{m.dst.id} {m.type} n={m.id} (Prior: None)')
         else:

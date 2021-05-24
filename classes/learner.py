@@ -19,7 +19,7 @@ class Learner:
         """
         receives a Message.
         :param m: The Message to receive.
-        :return: None
+        :return: None.
         """
         if m.type == 'SUCCESS':
             print(f'{self.sim.current_tick:04}: L{self.id} PREDICTED n={self.handle_success(m)}')
@@ -28,7 +28,7 @@ class Learner:
         """
         Handles the SUCCESS type Message.
         :param m: The SUCCESS Message.
-        :return: None
+        :return: None.
         """
         m_split = m.value.split(':')
         lang = m_split[0]
@@ -37,6 +37,7 @@ class Learner:
             self.matrices[lang] = np.zeros((28, 28))
         if len(data) == 1:
             data += ' '
+        # Increase the matrix with one on the correct index.
         self.matrices[lang][self.allowed_chars.index(data[0]), self.allowed_chars.index(data[1])] += 1
         return self.count_matrices()
 

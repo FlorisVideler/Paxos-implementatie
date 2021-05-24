@@ -68,6 +68,7 @@ class Simulation:
             for event in self.events:
                 if int(event[0]) == tick:
                     event_type = event[1]
+                    # Handle if a computer fails.
                     if event_type == 'FAIL':
                         if event[2] == 'PROPOSER':
                             print(f'{tick:04}: P{int(event[3])} **kapot**')
@@ -75,7 +76,7 @@ class Simulation:
                         elif event[2] == 'ACCEPTOR':
                             print(f'{tick:04}: A{int(event[3])} **kapot**')
                             self.a[int(event[3]) - 1].failed = True
-
+                    # Handle if a computer recovers.
                     elif event_type == 'RECOVER':
                         if event[2] == 'PROPOSER':
                             print(f'{tick:04}: P{int(event[3])} **gerepareerd**')
@@ -83,7 +84,7 @@ class Simulation:
                         elif event[2] == 'ACCEPTOR':
                             print(f'{tick:04}: A{int(event[3])} **gerepareerd**')
                             self.a[int(event[3]) - 1].failed = False
-
+                    # Handle if a proposal is made.
                     elif event_type == 'PROPOSE':
                         tick_done = True
                         m = Message(None, self.p[int(event[2]) - 1], event[1], event[3], None, None)
@@ -101,6 +102,7 @@ class Simulation:
             m.dst.receive_message(m)
             self.no_msg = 0
         else:
+            # If there are no messages for 2 ticks we say there is consensus.
             self.no_msg += 1
             if self.no_msg == 2:
                 self.no_msg = 0

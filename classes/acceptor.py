@@ -30,7 +30,7 @@ class Acceptor:
         """
         receives a Message.
         :param m: The Message to receive.
-        :return: None
+        :return: None.
         """
         if m.type == 'PREPARE':
             self.handle_prepare(m)
