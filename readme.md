@@ -3,7 +3,7 @@ Niels Bijl 1754339 <br>
 Floris Videler 1758374
 
 ## Input examples
-(For all the input examples from fase 1 we added a 0, for the amount of learners needed.)
+(For all the input examples from fase 1 we added a 0, for the amount of learners needed.)<br>
 Example #1
 ```
 1 3 0 15
