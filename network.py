@@ -1,13 +1,15 @@
 from message import Message
+from typing import Optional
 
 
 class Network:
-    queue = []
+    def __init__(self) -> None:
+        self.queue = []
 
-    def queue_message(self, m: Message):
+    def queue_message(self, m: Message) -> None:
         self.queue.append(m)
 
-    def extract_message(self):
+    def extract_message(self) -> Optional[None, Message]:
         index = 0
         while self.queue:
             m = self.queue[index]

@@ -6,7 +6,7 @@ from message import Message
 
 
 class Simulation:
-    def __init__(self, input_file: str):
+    def __init__(self, input_file: str) -> None:
         self.p = []
         self.a = []
         self.l = []
@@ -19,7 +19,7 @@ class Simulation:
         self.current_tick = 0
         self.read_input_file(input_file)
 
-    def read_input_file(self, input_file: str):
+    def read_input_file(self, input_file: str) -> None:
         with open(input_file, 'r') as file:
             events = file.readlines()
             events = list(map(lambda x: x.rstrip('\n').split(' ', 3), events))
@@ -29,7 +29,7 @@ class Simulation:
             self.t_max = int(t_max)
             self.setup_computers(n_p, n_a, n_l)
 
-    def setup_computers(self, n_p: int, n_a: int, n_l: int):
+    def setup_computers(self, n_p: int, n_a: int, n_l: int) -> None:
         for i in range(int(n_p)):
             self.p.append(Proposer(i + 1, self))
 
@@ -39,7 +39,7 @@ class Simulation:
         for i in range(int(n_l)):
             self.l.append(Learner(i + 1, self))
 
-    def start(self):
+    def start(self) -> None:
         no_msg = 0
         submitted = 0
         for tick in range(self.t_max):
@@ -95,7 +95,7 @@ class Simulation:
                     else:
                         print(f'{tick:04}: ')
 
-    def success(self):
+    def success(self) -> None:
         for learner in self.l:
             learner.deliver_message(Message(self, learner, 'SUCCESS', self.accepted, None, None))
 

@@ -1,8 +1,8 @@
 from message import Message
 
 
-class Proposer():
-    def __init__(self, _id: int, sim: 'Simulation'):
+class Proposer:
+    def __init__(self, _id: int, sim: 'Simulation') -> None:
         self.proposed_value = None
         self.id = _id
         self.sim = sim
@@ -14,14 +14,13 @@ class Proposer():
         self.state = 'PROPOSE'
         self.failed = False
 
-    def deliver_message(self, m: Message):
+    def deliver_message(self, m: Message) -> None:
         if m.type == 'PROPOSE':
             self.state = 'PROPOSE'
             self.proposed_value = m.value
             self.value = m.value
             self.handle_propose()
             print(f'{self.sim.current_tick:04}: -> P{m.dst.id} {m.type} {m.value}')
-            return f' -> P{m.dst.id} {m.type} {m.value}'
         elif m.type == 'REJECTED':
             if m.id == self.p_id:
                 self.rejected.add(m.src)
@@ -30,7 +29,6 @@ class Proposer():
                 self.accepted = set()
                 self.rejected = set()
             print(f'{self.sim.current_tick:04}: A{m.src.id} -> P{m.dst.id} {m.type} n={m.id}')
-            return f'A{m.src.id} -> P{m.dst.id} {m.type} n={m.id}'
         elif m.type == 'PROMISE':
             if m.id == self.p_id and m.type == self.state:
                 self.accepted.add(m.src)
@@ -41,11 +39,9 @@ class Proposer():
             prior = m.prior
             if prior is None:
                 print(f'{self.sim.current_tick:04}: A{m.src.id} -> P{m.dst.id} {m.type} n={m.id} (Prior: None)')
-                return f'A{m.src.id} -> P{m.dst.id} {m.type} n={m.id} (Prior: None)'
             else:
                 self.value = prior['v']
                 print(f'{self.sim.current_tick:04}: A{m.src.id} -> P{m.dst.id} {m.type} n={m.id} (Prior: n={prior["n"]}, v={prior["v"]})')
-                return f'A{m.src.id} -> P{m.dst.id} {m.type} n={m.id} (Prior: n={prior["n"]}, v={prior["v"]})'
         elif m.type == 'ACCEPTED':
             if m.id == self.p_id and m.type == self.state:
                 self.accepted.add(m.src)
@@ -60,9 +56,8 @@ class Proposer():
                 self.accepted = set()
                 self.rejected = set()
             print(f'{self.sim.current_tick:04}: A{m.src.id} -> P{m.dst.id} {m.type} n={m.id} v={self.value}')
-            return f'A{m.src.id} -> P{m.dst.id} {m.type} n={m.id} v={self.value}'
 
-    def handle_promise(self):
+    def handle_promise(self) -> None:
         self.state = 'ACCEPTED'
         for acceptor in self.sim.a:
             respond_m = Message(self, acceptor, 'ACCEPT', self.value, self.p_id, None)
@@ -70,7 +65,7 @@ class Proposer():
         # respond_m = Message(self, m.src, 'ACCEPT', self.value, self.id)
         # self.n.queue_message(respond_m)
 
-    def handle_propose(self):
+    def handle_propose(self) -> None:
         self.state = 'PROMISE'
         self.sim.propose_counter += 1
         self.p_id = self.sim.propose_counter
@@ -79,5 +74,5 @@ class Proposer():
             respond_m = Message(self, acceptor, 'PREPARE', None, self.p_id, None)
             self.n.queue_message(respond_m)
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f'P{self.id}'
