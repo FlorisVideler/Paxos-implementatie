@@ -2,549 +2,830 @@
 0001: P1 -> A1 PREPARE n=1
 0002: P1 -> A2 PREPARE n=1
 0003: P1 -> A3 PREPARE n=1
+0004: A1 -> P1 PROMISE n=1 (Prior: None)
 0005: A2 -> P1 PROMISE n=1 (Prior: None)
+0006: A3 -> P1 PROMISE n=1 (Prior: None)
 0007: P1 -> A1 ACCEPT n=1 v=nl: g
 0008: P1 -> A2 ACCEPT n=1 v=nl: g
 0009: P1 -> A3 ACCEPT n=1 v=nl: g
+0010: A1 -> P1 ACCEPTED n=1 v=nl: g
 0011: A2 -> P1 ACCEPTED n=1 v=nl: g
+0012: A3 -> P1 ACCEPTED n=1 v=nl: g
 0013:
-P1 heeft wel consensus (voorgesteld: nl: g, geaccepteerd: nl: g)
-0014: L1 PREDICTED n=1.0
+0014:
 0015:
+0016:
 0017:
-0019:
+0018:
+P1 heeft wel consensus (voorgesteld: nl: g, geaccepteerd: nl: g)
+0019: L1 PREDICTED n=1.0
+0020:
 0021:
+0022:
 0023:
+0024:
 0025:
 0027:
+0028:
 0029:
+0030:
 0031:
-0033:
+0032:
+0034:
 0035:
+0036:
 0037:
+0038:
 0039:
 0041:
+0042:
 0043:
+0044:
 0045:
-0047:
+0046:
+0048:
 0049:
+0050:
 0051:
+0052:
 0053:
 0055:
+0056:
 0057:
+0058:
 0059:
-0061:
+0060:
+0062:
 0063:
+0064:
 0065:
+0066:
 0067:
 0069:
+0070:
 0071:
+0072:
 0073:
-0075:
+0074:
+0076:
 0077:
+0078:
 0079:
+0080:
 0081:
 0083:
+0084:
 0085:
+0086:
 0087:
-0089:
+0088:
+0090:
 0091:
+0092:
 0093:
+0094:
 0095:
 0097:
+0098:
 0099:
 0100: -> P1 PROPOSE nl:ga
 0101: P1 -> A1 PREPARE n=2
 0102: P1 -> A2 PREPARE n=2
 0103: P1 -> A3 PREPARE n=2
 0104: A1 -> P1 PROMISE n=2 (Prior: None)
+0105: A2 -> P1 PROMISE n=2 (Prior: None)
+0106: A3 -> P1 PROMISE n=2 (Prior: None)
 0107: P1 -> A1 ACCEPT n=2 v=nl:ga
 0108: P1 -> A2 ACCEPT n=2 v=nl:ga
 0109: P1 -> A3 ACCEPT n=2 v=nl:ga
+0110: A1 -> P1 ACCEPTED n=2 v=nl:ga
 0111: A2 -> P1 ACCEPTED n=2 v=nl:ga
+0112: A3 -> P1 ACCEPTED n=2 v=nl:ga
 0113:
-P1 heeft wel consensus (voorgesteld: nl:ga, geaccepteerd: nl:ga)
-0114: L1 PREDICTED n=2.0
+0114:
 0115:
+0116:
 0117:
-0119:
+0118:
+P1 heeft wel consensus (voorgesteld: nl:ga, geaccepteerd: nl:ga)
+0119: L1 PREDICTED n=2.0
+0120:
 0121:
+0122:
 0123:
+0124:
 0125:
 0127:
+0128:
 0129:
+0130:
 0131:
-0133:
+0132:
+0134:
 0135:
+0136:
 0137:
+0138:
 0139:
 0141:
+0142:
 0143:
+0144:
 0145:
-0147:
+0146:
+0148:
 0149:
+0150:
 0151:
+0152:
 0153:
 0155:
+0156:
 0157:
+0158:
 0159:
-0161:
+0160:
+0162:
 0163:
+0164:
 0165:
+0166:
 0167:
 0169:
+0170:
 0171:
+0172:
 0173:
-0175:
+0174:
+0176:
 0177:
+0178:
 0179:
+0180:
 0181:
 0183:
+0184:
 0185:
+0186:
 0187:
-0189:
+0188:
+0190:
 0191:
+0192:
 0193:
+0194:
 0195:
 0197:
+0198:
 0199:
 0200: -> P1 PROPOSE nl:af
 0201: P1 -> A1 PREPARE n=3
 0202: P1 -> A2 PREPARE n=3
 0203: P1 -> A3 PREPARE n=3
 0204: A1 -> P1 PROMISE n=3 (Prior: None)
+0205: A2 -> P1 PROMISE n=3 (Prior: None)
+0206: A3 -> P1 PROMISE n=3 (Prior: None)
 0207: P1 -> A1 ACCEPT n=3 v=nl:af
 0208: P1 -> A2 ACCEPT n=3 v=nl:af
 0209: P1 -> A3 ACCEPT n=3 v=nl:af
+0210: A1 -> P1 ACCEPTED n=3 v=nl:af
 0211: A2 -> P1 ACCEPTED n=3 v=nl:af
+0212: A3 -> P1 ACCEPTED n=3 v=nl:af
 0213:
-P1 heeft wel consensus (voorgesteld: nl:af, geaccepteerd: nl:af)
-0214: L1 PREDICTED n=3.0
+0214:
 0215:
+0216:
 0217:
-0219:
+0218:
+P1 heeft wel consensus (voorgesteld: nl:af, geaccepteerd: nl:af)
+0219: L1 PREDICTED n=3.0
+0220:
 0221:
+0222:
 0223:
+0224:
 0225:
 0227:
+0228:
 0229:
+0230:
 0231:
-0233:
+0232:
+0234:
 0235:
+0236:
 0237:
+0238:
 0239:
 0241:
+0242:
 0243:
+0244:
 0245:
-0247:
+0246:
+0248:
 0249:
+0250:
 0251:
+0252:
 0253:
 0255:
+0256:
 0257:
+0258:
 0259:
-0261:
+0260:
+0262:
 0263:
+0264:
 0265:
+0266:
 0267:
 0269:
+0270:
 0271:
+0272:
 0273:
-0275:
+0274:
+0276:
 0277:
+0278:
 0279:
+0280:
 0281:
 0283:
+0284:
 0285:
+0286:
 0287:
-0289:
+0288:
+0290:
 0291:
+0292:
 0293:
+0294:
 0295:
 0297:
+0298:
 0299:
 0300: -> P1 PROPOSE nl:f
 0301: P1 -> A1 PREPARE n=4
 0302: P1 -> A2 PREPARE n=4
 0303: P1 -> A3 PREPARE n=4
 0304: A1 -> P1 PROMISE n=4 (Prior: None)
+0305: A2 -> P1 PROMISE n=4 (Prior: None)
+0306: A3 -> P1 PROMISE n=4 (Prior: None)
 0307: P1 -> A1 ACCEPT n=4 v=nl:f
 0308: P1 -> A2 ACCEPT n=4 v=nl:f
 0309: P1 -> A3 ACCEPT n=4 v=nl:f
+0310: A1 -> P1 ACCEPTED n=4 v=nl:f
 0311: A2 -> P1 ACCEPTED n=4 v=nl:f
+0312: A3 -> P1 ACCEPTED n=4 v=nl:f
 0313:
-P1 heeft wel consensus (voorgesteld: nl:f, geaccepteerd: nl:f)
-0314: L1 PREDICTED n=4.0
+0314:
 0315:
+0316:
 0317:
-0319:
+0318:
+P1 heeft wel consensus (voorgesteld: nl:f, geaccepteerd: nl:f)
+0319: L1 PREDICTED n=4.0
+0320:
 0321:
+0322:
 0323:
+0324:
 0325:
 0327:
+0328:
 0329:
+0330:
 0331:
-0333:
+0332:
+0334:
 0335:
+0336:
 0337:
+0338:
 0339:
 0341:
+0342:
 0343:
+0344:
 0345:
-0347:
+0346:
+0348:
 0349:
+0350:
 0351:
+0352:
 0353:
 0355:
+0356:
 0357:
+0358:
 0359:
-0361:
+0360:
+0362:
 0363:
+0364:
 0365:
+0366:
 0367:
 0369:
+0370:
 0371:
+0372:
 0373:
-0375:
+0374:
+0376:
 0377:
+0378:
 0379:
+0380:
 0381:
 0383:
+0384:
 0385:
+0386:
 0387:
-0389:
+0388:
+0390:
 0391:
+0392:
 0393:
+0394:
 0395:
 0397:
+0398:
 0399:
 0400: -> P1 PROPOSE en: g
 0401: P1 -> A1 PREPARE n=5
 0402: P1 -> A2 PREPARE n=5
 0403: P1 -> A3 PREPARE n=5
 0404: A1 -> P1 PROMISE n=5 (Prior: None)
+0405: A2 -> P1 PROMISE n=5 (Prior: None)
+0406: A3 -> P1 PROMISE n=5 (Prior: None)
 0407: P1 -> A1 ACCEPT n=5 v=en: g
 0408: P1 -> A2 ACCEPT n=5 v=en: g
 0409: P1 -> A3 ACCEPT n=5 v=en: g
+0410: A1 -> P1 ACCEPTED n=5 v=en: g
 0411: A2 -> P1 ACCEPTED n=5 v=en: g
+0412: A3 -> P1 ACCEPTED n=5 v=en: g
 0413:
-P1 heeft wel consensus (voorgesteld: en: g, geaccepteerd: en: g)
-0414: L1 PREDICTED n=5.0
+0414:
 0415:
+0416:
 0417:
-0419:
+0418:
+P1 heeft wel consensus (voorgesteld: en: g, geaccepteerd: en: g)
+0419: L1 PREDICTED n=5.0
+0420:
 0421:
+0422:
 0423:
+0424:
 0425:
 0427:
+0428:
 0429:
+0430:
 0431:
-0433:
+0432:
+0434:
 0435:
+0436:
 0437:
+0438:
 0439:
 0441:
+0442:
 0443:
+0444:
 0445:
-0447:
+0446:
+0448:
 0449:
+0450:
 0451:
+0452:
 0453:
 0455:
+0456:
 0457:
+0458:
 0459:
-0461:
+0460:
+0462:
 0463:
+0464:
 0465:
+0466:
 0467:
 0469:
+0470:
 0471:
+0472:
 0473:
-0475:
+0474:
+0476:
 0477:
+0478:
 0479:
+0480:
 0481:
 0483:
+0484:
 0485:
+0486:
 0487:
-0489:
+0488:
+0490:
 0491:
+0492:
 0493:
+0494:
 0495:
 0497:
+0498:
 0499:
 0500: -> P1 PROPOSE en:gr
 0501: P1 -> A1 PREPARE n=6
 0502: P1 -> A2 PREPARE n=6
 0503: P1 -> A3 PREPARE n=6
 0504: A1 -> P1 PROMISE n=6 (Prior: None)
+0505: A2 -> P1 PROMISE n=6 (Prior: None)
+0506: A3 -> P1 PROMISE n=6 (Prior: None)
 0507: P1 -> A1 ACCEPT n=6 v=en:gr
 0508: P1 -> A2 ACCEPT n=6 v=en:gr
 0509: P1 -> A3 ACCEPT n=6 v=en:gr
+0510: A1 -> P1 ACCEPTED n=6 v=en:gr
 0511: A2 -> P1 ACCEPTED n=6 v=en:gr
+0512: A3 -> P1 ACCEPTED n=6 v=en:gr
 0513:
-P1 heeft wel consensus (voorgesteld: en:gr, geaccepteerd: en:gr)
-0514: L1 PREDICTED n=6.0
+0514:
 0515:
+0516:
 0517:
-0519:
+0518:
+P1 heeft wel consensus (voorgesteld: en:gr, geaccepteerd: en:gr)
+0519: L1 PREDICTED n=6.0
+0520:
 0521:
+0522:
 0523:
+0524:
 0525:
 0527:
+0528:
 0529:
+0530:
 0531:
-0533:
+0532:
+0534:
 0535:
+0536:
 0537:
+0538:
 0539:
 0541:
+0542:
 0543:
+0544:
 0545:
-0547:
+0546:
+0548:
 0549:
+0550:
 0551:
+0552:
 0553:
 0555:
+0556:
 0557:
+0558:
 0559:
-0561:
+0560:
+0562:
 0563:
+0564:
 0565:
+0566:
 0567:
 0569:
+0570:
 0571:
+0572:
 0573:
-0575:
+0574:
+0576:
 0577:
+0578:
 0579:
+0580:
 0581:
 0583:
+0584:
 0585:
+0586:
 0587:
-0589:
+0588:
+0590:
 0591:
+0592:
 0593:
+0594:
 0595:
 0597:
+0598:
 0599:
 0600: -> P1 PROPOSE en:re
 0601: P1 -> A1 PREPARE n=7
 0602: P1 -> A2 PREPARE n=7
 0603: P1 -> A3 PREPARE n=7
 0604: A1 -> P1 PROMISE n=7 (Prior: None)
+0605: A2 -> P1 PROMISE n=7 (Prior: None)
+0606: A3 -> P1 PROMISE n=7 (Prior: None)
 0607: P1 -> A1 ACCEPT n=7 v=en:re
 0608: P1 -> A2 ACCEPT n=7 v=en:re
 0609: P1 -> A3 ACCEPT n=7 v=en:re
+0610: A1 -> P1 ACCEPTED n=7 v=en:re
 0611: A2 -> P1 ACCEPTED n=7 v=en:re
+0612: A3 -> P1 ACCEPTED n=7 v=en:re
 0613:
-P1 heeft wel consensus (voorgesteld: en:re, geaccepteerd: en:re)
-0614: L1 PREDICTED n=7.0
+0614:
 0615:
+0616:
 0617:
-0619:
+0618:
+P1 heeft wel consensus (voorgesteld: en:re, geaccepteerd: en:re)
+0619: L1 PREDICTED n=7.0
+0620:
 0621:
+0622:
 0623:
+0624:
 0625:
 0627:
+0628:
 0629:
+0630:
 0631:
-0633:
+0632:
+0634:
 0635:
+0636:
 0637:
+0638:
 0639:
 0641:
+0642:
 0643:
+0644:
 0645:
-0647:
+0646:
+0648:
 0649:
+0650:
 0651:
+0652:
 0653:
 0655:
+0656:
 0657:
+0658:
 0659:
-0661:
+0660:
+0662:
 0663:
+0664:
 0665:
+0666:
 0667:
 0669:
+0670:
 0671:
+0672:
 0673:
-0675:
+0674:
+0676:
 0677:
+0678:
 0679:
+0680:
 0681:
 0683:
+0684:
 0685:
+0686:
 0687:
-0689:
+0688:
+0690:
 0691:
+0692:
 0693:
+0694:
 0695:
 0697:
+0698:
 0699:
 0700: -> P1 PROPOSE en:ea
 0701: P1 -> A1 PREPARE n=8
 0702: P1 -> A2 PREPARE n=8
 0703: P1 -> A3 PREPARE n=8
 0704: A1 -> P1 PROMISE n=8 (Prior: None)
+0705: A2 -> P1 PROMISE n=8 (Prior: None)
+0706: A3 -> P1 PROMISE n=8 (Prior: None)
 0707: P1 -> A1 ACCEPT n=8 v=en:ea
 0708: P1 -> A2 ACCEPT n=8 v=en:ea
 0709: P1 -> A3 ACCEPT n=8 v=en:ea
+0710: A1 -> P1 ACCEPTED n=8 v=en:ea
 0711: A2 -> P1 ACCEPTED n=8 v=en:ea
+0712: A3 -> P1 ACCEPTED n=8 v=en:ea
 0713:
-P1 heeft wel consensus (voorgesteld: en:ea, geaccepteerd: en:ea)
-0714: L1 PREDICTED n=8.0
+0714:
 0715:
+0716:
 0717:
-0719:
+0718:
+P1 heeft wel consensus (voorgesteld: en:ea, geaccepteerd: en:ea)
+0719: L1 PREDICTED n=8.0
+0720:
 0721:
+0722:
 0723:
+0724:
 0725:
 0727:
+0728:
 0729:
+0730:
 0731:
-0733:
+0732:
+0734:
 0735:
+0736:
 0737:
+0738:
 0739:
 0741:
+0742:
 0743:
+0744:
 0745:
-0747:
+0746:
+0748:
 0749:
+0750:
 0751:
+0752:
 0753:
 0755:
+0756:
 0757:
+0758:
 0759:
-0761:
+0760:
+0762:
 0763:
+0764:
 0765:
+0766:
 0767:
 0769:
+0770:
 0771:
+0772:
 0773:
-0775:
+0774:
+0776:
 0777:
+0778:
 0779:
+0780:
 0781:
 0783:
+0784:
 0785:
+0786:
 0787:
-0789:
+0788:
+0790:
 0791:
+0792:
 0793:
+0794:
 0795:
 0797:
+0798:
 0799:
 0800: -> P1 PROPOSE en:at
 0801: P1 -> A1 PREPARE n=9
 0802: P1 -> A2 PREPARE n=9
 0803: P1 -> A3 PREPARE n=9
 0804: A1 -> P1 PROMISE n=9 (Prior: None)
+0805: A2 -> P1 PROMISE n=9 (Prior: None)
+0806: A3 -> P1 PROMISE n=9 (Prior: None)
 0807: P1 -> A1 ACCEPT n=9 v=en:at
 0808: P1 -> A2 ACCEPT n=9 v=en:at
 0809: P1 -> A3 ACCEPT n=9 v=en:at
+0810: A1 -> P1 ACCEPTED n=9 v=en:at
 0811: A2 -> P1 ACCEPTED n=9 v=en:at
+0812: A3 -> P1 ACCEPTED n=9 v=en:at
 0813:
-P1 heeft wel consensus (voorgesteld: en:at, geaccepteerd: en:at)
-0814: L1 PREDICTED n=9.0
+0814:
 0815:
+0816:
 0817:
-0819:
+0818:
+P1 heeft wel consensus (voorgesteld: en:at, geaccepteerd: en:at)
+0819: L1 PREDICTED n=9.0
+0820:
 0821:
+0822:
 0823:
+0824:
 0825:
 0827:
+0828:
 0829:
+0830:
 0831:
-0833:
+0832:
+0834:
 0835:
+0836:
 0837:
+0838:
 0839:
 0841:
+0842:
 0843:
+0844:
 0845:
-0847:
+0846:
+0848:
 0849:
+0850:
 0851:
+0852:
 0853:
 0855:
+0856:
 0857:
+0858:
 0859:
-0861:
+0860:
+0862:
 0863:
+0864:
 0865:
+0866:
 0867:
 0869:
+0870:
 0871:
+0872:
 0873:
-0875:
+0874:
+0876:
 0877:
+0878:
 0879:
+0880:
 0881:
 0883:
+0884:
 0885:
+0886:
 0887:
-0889:
+0888:
+0890:
 0891:
+0892:
 0893:
+0894:
 0895:
 0897:
+0898:
 0899:
 0900: -> P1 PROPOSE en:t
 0901: P1 -> A1 PREPARE n=10
 0902: P1 -> A2 PREPARE n=10
 0903: P1 -> A3 PREPARE n=10
 0904: A1 -> P1 PROMISE n=10 (Prior: None)
+0905: A2 -> P1 PROMISE n=10 (Prior: None)
+0906: A3 -> P1 PROMISE n=10 (Prior: None)
 0907: P1 -> A1 ACCEPT n=10 v=en:t
 0908: P1 -> A2 ACCEPT n=10 v=en:t
 0909: P1 -> A3 ACCEPT n=10 v=en:t
+0910: A1 -> P1 ACCEPTED n=10 v=en:t
 0911: A2 -> P1 ACCEPTED n=10 v=en:t
+0912: A3 -> P1 ACCEPTED n=10 v=en:t
 0913:
-P1 heeft wel consensus (voorgesteld: en:t, geaccepteerd: en:t)
-0914: L1 PREDICTED n=10.0
+0914:
 0915:
+0916:
 0917:
-0919:
-0921:
-0923:
-0925:
-0927:
-0929:
-0931:
-0933:
-0935:
-0937:
-0939:
-0941:
-0943:
-0945:
-0947:
-0949:
-0951:
-0953:
-0955:
-0957:
-0959:
-0961:
-0963:
-0965:
-0967:
-0969:
-0971:
-0973:
-0975:
-0977:
-0979:
-0981:
-0983:
-0985:
-0987:
-0989:
-0991:
-0993:
-0995:
-0997:
-0999:
+0918:
+P1 heeft wel consensus (voorgesteld: en:t, geaccepteerd: en:t)
+0919: L1 PREDICTED n=10.0
