@@ -10,7 +10,7 @@ Example #1
 0 PROPOSE 1 42
 0 END
 ```
-![alt text](https://i.postimg.cc/W1tXr6Qg/image.png)
+![alt text](https://i.postimg.cc/Bv8Yzf8S/image.png)
 
 Example #2
 ```
@@ -21,7 +21,8 @@ Example #2
 26 RECOVER PROPOSER 1
 0 END
 ```
-![alt text](https://i.postimg.cc/sfwYcGPc/image.png)
+![alt text](https://i.postimg.cc/htNbfzjn/image.png)
+![alt text](https://i.postimg.cc/ydyFQLT6/image.png)
 
 Example #3
 ```
