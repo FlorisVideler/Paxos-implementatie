@@ -38,7 +38,6 @@ Example #3
 900 PROPOSE 1 en:t 
 0 END
 ```
-![alt text]()
 ![alt text](https://i.postimg.cc/htT2B1Dx/image.png)
 ![alt text](https://i.postimg.cc/Nj6kVGDk/image.png)
 ![alt text](https://i.postimg.cc/g04qzMfw/image.png)
