@@ -2,7 +2,7 @@
 Niels Bijl 1754339 <br>
 Floris Videler 1758374
 
-## Input examples
+## Validation
 (For all the input examples from fase 1 we added a 0, for the amount of learners needed.)<br>
 Example #1
 ```
@@ -10,7 +10,7 @@ Example #1
 0 PROPOSE 1 42
 0 END
 ```
-![alt text](https://i.ibb.co/cYK3zrJ/example1.png)
+![alt text](https://i.postimg.cc/W1tXr6Qg/image.png)
 
 Example #2
 ```
@@ -21,7 +21,7 @@ Example #2
 26 RECOVER PROPOSER 1
 0 END
 ```
-![alt text](https://i.ibb.co/ZzGJqY6/example2.png)
+![alt text](https://i.postimg.cc/sfwYcGPc/image.png)
 
 Example #3
 ```
@@ -38,16 +38,18 @@ Example #3
 900 PROPOSE 1 en:t 
 0 END
 ```
-![alt text](https://i.ibb.co/GRQdCgw/example3-1.png)
-![alt text](https://i.ibb.co/5nWMQVz/example3-2.png)
-![alt text](https://i.ibb.co/j48Bpyf/example3-3.png)
-![alt text](https://i.ibb.co/FstPyzQ/example3-4.png)
-![alt text](https://i.ibb.co/4R8DBGT/example3-5.png)
-![alt text](https://i.ibb.co/47FfGPB/example3-6.png)
-![alt text](https://i.ibb.co/PMyVC72/example3-7.png)
-![alt text](https://i.ibb.co/FbmBL1D/example3-8.png)
-![alt text](https://i.ibb.co/M6nV7Bp/example3-9.png)
-![alt text](https://i.ibb.co/svDN1Cr/example3-9-1.png)
+![alt text](https://i.postimg.cc/xd3J1BtR/image.png)
+![alt text](https://i.postimg.cc/QCwVzDdX/image.png)
+![alt text](https://i.postimg.cc/bNSZtZmd/image.png)
+![alt text](https://i.postimg.cc/V65fPhT5/image.png)
+![alt text](https://i.postimg.cc/sDCM5Vqc/image.png)
+![alt text](https://i.postimg.cc/xTQdc6Np/image.png)
+![alt text](https://i.postimg.cc/xCr2BdKp/image.png)
+![alt text](https://i.postimg.cc/MpcgxSZC/image.png)
+![alt text](https://i.postimg.cc/vTB3zrcJ/image.png)
+![alt text](https://i.postimg.cc/vB8zYrL4/image.png)
+
+
 
 
 
