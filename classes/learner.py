@@ -22,7 +22,8 @@ class Learner:
         :return: None.
         """
         if m.type == 'SUCCESS':
-            print(f'{self.sim.current_tick:04}: L{self.id} PREDICTED n={self.handle_success(m)}')
+            print(f'{self.sim.current_tick:04}: P{m.src.id} -> L{m.dst.id} {m.type} n={m.id} v={m.value}')
+            print(f'L{self.id} PREDICTED n={self.handle_success(m)}')
 
     def handle_success(self, m: Message) -> float:
         """

@@ -19,6 +19,7 @@
 0017: A3 -> P2 PROMISE n=2 (Prior: None)
 0018: P2 -> A1 ACCEPT n=2 v=42
 0019: P2 -> A2 ACCEPT n=2 v=42
+
 0020: P2 -> A3 ACCEPT n=2 v=42
 0021: A1 -> P2 ACCEPTED n=2 v=42
 0022: A2 -> P2 ACCEPTED n=2 v=42
@@ -49,5 +50,6 @@
 0046:
 0047:
 0048:
-P1 heeft wel consensus (voorgesteld: None, geaccepteerd: 42)
+0049:
+P1 heeft wel consensus (voorgesteld: 42, geaccepteerd: 42)
 P2 heeft wel consensus (voorgesteld: 37, geaccepteerd: 42)

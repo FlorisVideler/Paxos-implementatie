@@ -20,6 +20,7 @@ class Proposer:
         self.failed = False
 
     def receive_message(self, m: Message) -> None:
+        # print(self.id, self.proposed_value)
         """
         receives a Message.
         :param m: The Message to receive.
@@ -54,11 +55,15 @@ class Proposer:
         # If a majority of the Acceptors did not return with REJECTED we accepted it.
         if len(self.accepted) > len(self.sim.a) // 2:
             if self.state == 'PROMISE':
-                self.handle_promise(m)
+                self.handle_promise()
             elif self.state == 'ACCEPTED':
                 self.handle_accepted(m)
             self.accepted = set()
             self.rejected = set()
+
+    def success(self):
+        for learner in self.sim.l:
+            self.n.queue_message(Message(self, learner, 'SUCCESS', self.value, self.p_id, None))
 
     def handle_rejected(self, m: Message) -> None:
         """
@@ -83,8 +88,9 @@ class Proposer:
         """
         self.sim.accepted = m.value
         self.sim.accepted_n = m.id
+        self.success()
 
-    def handle_promise(self, m: Message) -> None:
+    def handle_promise(self) -> None:
         """
         Handles the PROMISE Message type.
         :param m: The Message to check.

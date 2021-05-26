@@ -63,6 +63,8 @@ class Simulation:
         :return: None.
         """
         for tick in range(self.t_max):
+            if tick == 20:
+                print()
             self.current_tick = tick
             tick_done = False  # Tick is done when a message is send!
             for event in self.events:
@@ -91,13 +93,12 @@ class Simulation:
                         m.dst.receive_message(m)
             if not tick_done:
                 self.msg_from_queue()
-        if self.submitted == 0:
-            for proposer in self.p:
-                if proposer.value is not None:
-                    print(
-                        f'P{proposer.id} heeft wel consensus (voorgesteld: {proposer.proposed_value}, geaccepteerd: {self.accepted})')
-                else:
-                    print(f'P{proposer.id} heeft geen consensus')
+        for proposer in self.p:
+            if proposer.value is not None:
+                print(
+                    f'P{proposer.id} heeft wel consensus (voorgesteld: {proposer.proposed_value}, geaccepteerd: {self.accepted})')
+            else:
+                print(f'P{proposer.id} heeft geen consensus')
                         
     def msg_from_queue(self) -> None:
         """
@@ -107,24 +108,8 @@ class Simulation:
         m = self.n.extract_message()
         if m:
             m.dst.receive_message(m)
-            self.no_msg = 0
         else:
-            # If there are no messages for 7 ticks we don't accept any new messages. And inform the learners.
-            self.no_msg += 1
-            if self.no_msg == 7:
-                self.no_msg = 0
-                if self.accepted_n != self.submitted:
-                    for proposer in self.p:
-                        if proposer.value is not None:
-                            print(
-                                f'P{proposer.id} heeft wel consensus (voorgesteld: {proposer.proposed_value}, geaccepteerd: {self.accepted})')
-                        else:
-                            print(f'P{proposer.id} heeft geen consensus')
-                    self.submitted = self.accepted_n
-                    self.success()
-
-            else:
-                print(f'{self.current_tick:04}: ')
+            print(f'{self.current_tick:04}: ')
 
 
     def success(self) -> None:

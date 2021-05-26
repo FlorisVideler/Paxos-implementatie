@@ -46,7 +46,7 @@ class Acceptor:
         :return: None
         """
         if m.id < self.prior_promised_id:
-            respond_m = Message(self, m.src, 'REJECTED', None, m.id, None)
+            respond_m = Message(self, m.src, 'REJECTED', m.value, m.id, None)
         else:
             self.prior_promised_id = m.id
             self.prior_promised_value = m.value
