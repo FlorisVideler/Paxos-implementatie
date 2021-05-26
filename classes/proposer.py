@@ -20,7 +20,6 @@ class Proposer:
         self.failed = False
 
     def receive_message(self, m: Message) -> None:
-        # print(self.id, self.proposed_value)
         """
         receives a Message.
         :param m: The Message to receive.

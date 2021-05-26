@@ -22,8 +22,6 @@ class Simulation:
         self.accepted_n = 0
         self.current_tick = 0
         self.read_input_file(input_file)
-        self.no_msg = 0
-        self.submitted = 0
 
     def read_input_file(self, input_file: str) -> None:
         """
@@ -63,8 +61,6 @@ class Simulation:
         :return: None.
         """
         for tick in range(self.t_max):
-            if tick == 20:
-                print()
             self.current_tick = tick
             tick_done = False  # Tick is done when a message is send!
             for event in self.events:
