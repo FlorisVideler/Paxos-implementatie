@@ -19,7 +19,6 @@ L1 PREDICTED n=1.0
 0017:
 0018:
 0019:
-
 0020:
 0021:
 0022:
@@ -104,16 +103,16 @@ L1 PREDICTED n=1.0
 0101: P1 -> A1 PREPARE n=2
 0102: P1 -> A2 PREPARE n=2
 0103: P1 -> A3 PREPARE n=2
-0104: A1 -> P1 PROMISE n=2 (Prior: n=1, v=nl: g)
-0105: A2 -> P1 PROMISE n=2 (Prior: n=1, v=nl: g)
-0106: A3 -> P1 PROMISE n=2 (Prior: n=1, v=nl: g)
-0107: P1 -> A1 ACCEPT n=2 v=nl: g
-0108: P1 -> A2 ACCEPT n=2 v=nl: g
-0109: P1 -> A3 ACCEPT n=2 v=nl: g
-0110: A1 -> P1 ACCEPTED n=2 v=nl: g
-0111: A2 -> P1 ACCEPTED n=2 v=nl: g
-0112: A3 -> P1 ACCEPTED n=2 v=nl: g
-0113: P1 -> L1 SUCCESS n=2 v=nl: g
+0104: A1 -> P1 PROMISE n=2 (Prior: None)
+0105: A2 -> P1 PROMISE n=2 (Prior: None)
+0106: A3 -> P1 PROMISE n=2 (Prior: None)
+0107: P1 -> A1 ACCEPT n=2 v=nl:ga
+0108: P1 -> A2 ACCEPT n=2 v=nl:ga
+0109: P1 -> A3 ACCEPT n=2 v=nl:ga
+0110: A1 -> P1 ACCEPTED n=2 v=nl:ga
+0111: A2 -> P1 ACCEPTED n=2 v=nl:ga
+0112: A3 -> P1 ACCEPTED n=2 v=nl:ga
+0113: P1 -> L1 SUCCESS n=2 v=nl:ga
 L1 PREDICTED n=2.0
 0114:
 0115:
@@ -205,16 +204,16 @@ L1 PREDICTED n=2.0
 0201: P1 -> A1 PREPARE n=3
 0202: P1 -> A2 PREPARE n=3
 0203: P1 -> A3 PREPARE n=3
-0204: A1 -> P1 PROMISE n=3 (Prior: n=2, v=nl: g)
-0205: A2 -> P1 PROMISE n=3 (Prior: n=2, v=nl: g)
-0206: A3 -> P1 PROMISE n=3 (Prior: n=2, v=nl: g)
-0207: P1 -> A1 ACCEPT n=3 v=nl: g
-0208: P1 -> A2 ACCEPT n=3 v=nl: g
-0209: P1 -> A3 ACCEPT n=3 v=nl: g
-0210: A1 -> P1 ACCEPTED n=3 v=nl: g
-0211: A2 -> P1 ACCEPTED n=3 v=nl: g
-0212: A3 -> P1 ACCEPTED n=3 v=nl: g
-0213: P1 -> L1 SUCCESS n=3 v=nl: g
+0204: A1 -> P1 PROMISE n=3 (Prior: None)
+0205: A2 -> P1 PROMISE n=3 (Prior: None)
+0206: A3 -> P1 PROMISE n=3 (Prior: None)
+0207: P1 -> A1 ACCEPT n=3 v=nl:af
+0208: P1 -> A2 ACCEPT n=3 v=nl:af
+0209: P1 -> A3 ACCEPT n=3 v=nl:af
+0210: A1 -> P1 ACCEPTED n=3 v=nl:af
+0211: A2 -> P1 ACCEPTED n=3 v=nl:af
+0212: A3 -> P1 ACCEPTED n=3 v=nl:af
+0213: P1 -> L1 SUCCESS n=3 v=nl:af
 L1 PREDICTED n=3.0
 0214:
 0215:
@@ -306,16 +305,16 @@ L1 PREDICTED n=3.0
 0301: P1 -> A1 PREPARE n=4
 0302: P1 -> A2 PREPARE n=4
 0303: P1 -> A3 PREPARE n=4
-0304: A1 -> P1 PROMISE n=4 (Prior: n=3, v=nl: g)
-0305: A2 -> P1 PROMISE n=4 (Prior: n=3, v=nl: g)
-0306: A3 -> P1 PROMISE n=4 (Prior: n=3, v=nl: g)
-0307: P1 -> A1 ACCEPT n=4 v=nl: g
-0308: P1 -> A2 ACCEPT n=4 v=nl: g
-0309: P1 -> A3 ACCEPT n=4 v=nl: g
-0310: A1 -> P1 ACCEPTED n=4 v=nl: g
-0311: A2 -> P1 ACCEPTED n=4 v=nl: g
-0312: A3 -> P1 ACCEPTED n=4 v=nl: g
-0313: P1 -> L1 SUCCESS n=4 v=nl: g
+0304: A1 -> P1 PROMISE n=4 (Prior: None)
+0305: A2 -> P1 PROMISE n=4 (Prior: None)
+0306: A3 -> P1 PROMISE n=4 (Prior: None)
+0307: P1 -> A1 ACCEPT n=4 v=nl:f
+0308: P1 -> A2 ACCEPT n=4 v=nl:f
+0309: P1 -> A3 ACCEPT n=4 v=nl:f
+0310: A1 -> P1 ACCEPTED n=4 v=nl:f
+0311: A2 -> P1 ACCEPTED n=4 v=nl:f
+0312: A3 -> P1 ACCEPTED n=4 v=nl:f
+0313: P1 -> L1 SUCCESS n=4 v=nl:f
 L1 PREDICTED n=4.0
 0314:
 0315:
@@ -407,16 +406,16 @@ L1 PREDICTED n=4.0
 0401: P1 -> A1 PREPARE n=5
 0402: P1 -> A2 PREPARE n=5
 0403: P1 -> A3 PREPARE n=5
-0404: A1 -> P1 PROMISE n=5 (Prior: n=4, v=nl: g)
-0405: A2 -> P1 PROMISE n=5 (Prior: n=4, v=nl: g)
-0406: A3 -> P1 PROMISE n=5 (Prior: n=4, v=nl: g)
-0407: P1 -> A1 ACCEPT n=5 v=nl: g
-0408: P1 -> A2 ACCEPT n=5 v=nl: g
-0409: P1 -> A3 ACCEPT n=5 v=nl: g
-0410: A1 -> P1 ACCEPTED n=5 v=nl: g
-0411: A2 -> P1 ACCEPTED n=5 v=nl: g
-0412: A3 -> P1 ACCEPTED n=5 v=nl: g
-0413: P1 -> L1 SUCCESS n=5 v=nl: g
+0404: A1 -> P1 PROMISE n=5 (Prior: None)
+0405: A2 -> P1 PROMISE n=5 (Prior: None)
+0406: A3 -> P1 PROMISE n=5 (Prior: None)
+0407: P1 -> A1 ACCEPT n=5 v=en: g
+0408: P1 -> A2 ACCEPT n=5 v=en: g
+0409: P1 -> A3 ACCEPT n=5 v=en: g
+0410: A1 -> P1 ACCEPTED n=5 v=en: g
+0411: A2 -> P1 ACCEPTED n=5 v=en: g
+0412: A3 -> P1 ACCEPTED n=5 v=en: g
+0413: P1 -> L1 SUCCESS n=5 v=en: g
 L1 PREDICTED n=5.0
 0414:
 0415:
@@ -508,16 +507,16 @@ L1 PREDICTED n=5.0
 0501: P1 -> A1 PREPARE n=6
 0502: P1 -> A2 PREPARE n=6
 0503: P1 -> A3 PREPARE n=6
-0504: A1 -> P1 PROMISE n=6 (Prior: n=5, v=nl: g)
-0505: A2 -> P1 PROMISE n=6 (Prior: n=5, v=nl: g)
-0506: A3 -> P1 PROMISE n=6 (Prior: n=5, v=nl: g)
-0507: P1 -> A1 ACCEPT n=6 v=nl: g
-0508: P1 -> A2 ACCEPT n=6 v=nl: g
-0509: P1 -> A3 ACCEPT n=6 v=nl: g
-0510: A1 -> P1 ACCEPTED n=6 v=nl: g
-0511: A2 -> P1 ACCEPTED n=6 v=nl: g
-0512: A3 -> P1 ACCEPTED n=6 v=nl: g
-0513: P1 -> L1 SUCCESS n=6 v=nl: g
+0504: A1 -> P1 PROMISE n=6 (Prior: None)
+0505: A2 -> P1 PROMISE n=6 (Prior: None)
+0506: A3 -> P1 PROMISE n=6 (Prior: None)
+0507: P1 -> A1 ACCEPT n=6 v=en:gr
+0508: P1 -> A2 ACCEPT n=6 v=en:gr
+0509: P1 -> A3 ACCEPT n=6 v=en:gr
+0510: A1 -> P1 ACCEPTED n=6 v=en:gr
+0511: A2 -> P1 ACCEPTED n=6 v=en:gr
+0512: A3 -> P1 ACCEPTED n=6 v=en:gr
+0513: P1 -> L1 SUCCESS n=6 v=en:gr
 L1 PREDICTED n=6.0
 0514:
 0515:
@@ -609,16 +608,16 @@ L1 PREDICTED n=6.0
 0601: P1 -> A1 PREPARE n=7
 0602: P1 -> A2 PREPARE n=7
 0603: P1 -> A3 PREPARE n=7
-0604: A1 -> P1 PROMISE n=7 (Prior: n=6, v=nl: g)
-0605: A2 -> P1 PROMISE n=7 (Prior: n=6, v=nl: g)
-0606: A3 -> P1 PROMISE n=7 (Prior: n=6, v=nl: g)
-0607: P1 -> A1 ACCEPT n=7 v=nl: g
-0608: P1 -> A2 ACCEPT n=7 v=nl: g
-0609: P1 -> A3 ACCEPT n=7 v=nl: g
-0610: A1 -> P1 ACCEPTED n=7 v=nl: g
-0611: A2 -> P1 ACCEPTED n=7 v=nl: g
-0612: A3 -> P1 ACCEPTED n=7 v=nl: g
-0613: P1 -> L1 SUCCESS n=7 v=nl: g
+0604: A1 -> P1 PROMISE n=7 (Prior: None)
+0605: A2 -> P1 PROMISE n=7 (Prior: None)
+0606: A3 -> P1 PROMISE n=7 (Prior: None)
+0607: P1 -> A1 ACCEPT n=7 v=en:re
+0608: P1 -> A2 ACCEPT n=7 v=en:re
+0609: P1 -> A3 ACCEPT n=7 v=en:re
+0610: A1 -> P1 ACCEPTED n=7 v=en:re
+0611: A2 -> P1 ACCEPTED n=7 v=en:re
+0612: A3 -> P1 ACCEPTED n=7 v=en:re
+0613: P1 -> L1 SUCCESS n=7 v=en:re
 L1 PREDICTED n=7.0
 0614:
 0615:
@@ -710,16 +709,16 @@ L1 PREDICTED n=7.0
 0701: P1 -> A1 PREPARE n=8
 0702: P1 -> A2 PREPARE n=8
 0703: P1 -> A3 PREPARE n=8
-0704: A1 -> P1 PROMISE n=8 (Prior: n=7, v=nl: g)
-0705: A2 -> P1 PROMISE n=8 (Prior: n=7, v=nl: g)
-0706: A3 -> P1 PROMISE n=8 (Prior: n=7, v=nl: g)
-0707: P1 -> A1 ACCEPT n=8 v=nl: g
-0708: P1 -> A2 ACCEPT n=8 v=nl: g
-0709: P1 -> A3 ACCEPT n=8 v=nl: g
-0710: A1 -> P1 ACCEPTED n=8 v=nl: g
-0711: A2 -> P1 ACCEPTED n=8 v=nl: g
-0712: A3 -> P1 ACCEPTED n=8 v=nl: g
-0713: P1 -> L1 SUCCESS n=8 v=nl: g
+0704: A1 -> P1 PROMISE n=8 (Prior: None)
+0705: A2 -> P1 PROMISE n=8 (Prior: None)
+0706: A3 -> P1 PROMISE n=8 (Prior: None)
+0707: P1 -> A1 ACCEPT n=8 v=en:ea
+0708: P1 -> A2 ACCEPT n=8 v=en:ea
+0709: P1 -> A3 ACCEPT n=8 v=en:ea
+0710: A1 -> P1 ACCEPTED n=8 v=en:ea
+0711: A2 -> P1 ACCEPTED n=8 v=en:ea
+0712: A3 -> P1 ACCEPTED n=8 v=en:ea
+0713: P1 -> L1 SUCCESS n=8 v=en:ea
 L1 PREDICTED n=8.0
 0714:
 0715:
@@ -811,16 +810,16 @@ L1 PREDICTED n=8.0
 0801: P1 -> A1 PREPARE n=9
 0802: P1 -> A2 PREPARE n=9
 0803: P1 -> A3 PREPARE n=9
-0804: A1 -> P1 PROMISE n=9 (Prior: n=8, v=nl: g)
-0805: A2 -> P1 PROMISE n=9 (Prior: n=8, v=nl: g)
-0806: A3 -> P1 PROMISE n=9 (Prior: n=8, v=nl: g)
-0807: P1 -> A1 ACCEPT n=9 v=nl: g
-0808: P1 -> A2 ACCEPT n=9 v=nl: g
-0809: P1 -> A3 ACCEPT n=9 v=nl: g
-0810: A1 -> P1 ACCEPTED n=9 v=nl: g
-0811: A2 -> P1 ACCEPTED n=9 v=nl: g
-0812: A3 -> P1 ACCEPTED n=9 v=nl: g
-0813: P1 -> L1 SUCCESS n=9 v=nl: g
+0804: A1 -> P1 PROMISE n=9 (Prior: None)
+0805: A2 -> P1 PROMISE n=9 (Prior: None)
+0806: A3 -> P1 PROMISE n=9 (Prior: None)
+0807: P1 -> A1 ACCEPT n=9 v=en:at
+0808: P1 -> A2 ACCEPT n=9 v=en:at
+0809: P1 -> A3 ACCEPT n=9 v=en:at
+0810: A1 -> P1 ACCEPTED n=9 v=en:at
+0811: A2 -> P1 ACCEPTED n=9 v=en:at
+0812: A3 -> P1 ACCEPTED n=9 v=en:at
+0813: P1 -> L1 SUCCESS n=9 v=en:at
 L1 PREDICTED n=9.0
 0814:
 0815:
@@ -912,16 +911,16 @@ L1 PREDICTED n=9.0
 0901: P1 -> A1 PREPARE n=10
 0902: P1 -> A2 PREPARE n=10
 0903: P1 -> A3 PREPARE n=10
-0904: A1 -> P1 PROMISE n=10 (Prior: n=9, v=nl: g)
-0905: A2 -> P1 PROMISE n=10 (Prior: n=9, v=nl: g)
-0906: A3 -> P1 PROMISE n=10 (Prior: n=9, v=nl: g)
-0907: P1 -> A1 ACCEPT n=10 v=nl: g
-0908: P1 -> A2 ACCEPT n=10 v=nl: g
-0909: P1 -> A3 ACCEPT n=10 v=nl: g
-0910: A1 -> P1 ACCEPTED n=10 v=nl: g
-0911: A2 -> P1 ACCEPTED n=10 v=nl: g
-0912: A3 -> P1 ACCEPTED n=10 v=nl: g
-0913: P1 -> L1 SUCCESS n=10 v=nl: g
+0904: A1 -> P1 PROMISE n=10 (Prior: None)
+0905: A2 -> P1 PROMISE n=10 (Prior: None)
+0906: A3 -> P1 PROMISE n=10 (Prior: None)
+0907: P1 -> A1 ACCEPT n=10 v=en:t
+0908: P1 -> A2 ACCEPT n=10 v=en:t
+0909: P1 -> A3 ACCEPT n=10 v=en:t
+0910: A1 -> P1 ACCEPTED n=10 v=en:t
+0911: A2 -> P1 ACCEPTED n=10 v=en:t
+0912: A3 -> P1 ACCEPTED n=10 v=en:t
+0913: P1 -> L1 SUCCESS n=10 v=en:t
 L1 PREDICTED n=10.0
 0914:
 0915:
@@ -1009,4 +1008,4 @@ L1 PREDICTED n=10.0
 0997:
 0998:
 0999:
-P1 heeft wel consensus (voorgesteld: en:t, geaccepteerd: nl: g)
+P1 heeft wel consensus (voorgesteld: en:t, geaccepteerd: en:t)
