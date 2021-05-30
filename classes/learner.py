@@ -31,6 +31,9 @@ class Learner:
         :param m: The SUCCESS Message.
         :return: None.
         """
+        for acceptor in self.sim.a:
+            acceptor.prior_promised_id = 0
+            acceptor.prior_promised_value = None
         m_split = m.value.split(':')
         lang = m_split[0]
         data = m_split[1]
