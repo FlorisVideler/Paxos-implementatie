@@ -10,7 +10,7 @@ Example #1
 0 PROPOSE 1 42
 0 END
 ```
-![alt text](https://i.postimg.cc/Bv8Yzf8S/image.png)
+![alt text](https://i.postimg.cc/mk7jqT1q/image.png)
 
 Example #2
 ```
@@ -21,8 +21,8 @@ Example #2
 26 RECOVER PROPOSER 1
 0 END
 ```
-![alt text](https://i.postimg.cc/htNbfzjn/image.png)
-![alt text](https://i.postimg.cc/ydyFQLT6/image.png)
+![alt text](https://i.postimg.cc/K8GfqSGq/image.png)
+![alt text](https://i.postimg.cc/zBgFbq7B/image.png)
 
 Example #3
 ```
@@ -39,17 +39,17 @@ Example #3
 900 PROPOSE 1 en:t 
 0 END
 ```
-![alt text](https://i.postimg.cc/htT2B1Dx/image.png)
-![alt text](https://i.postimg.cc/Nj6kVGDk/image.png)
-![alt text](https://i.postimg.cc/g04qzMfw/image.png)
-![alt text](https://i.postimg.cc/DZMrsSfn/image.png)
-![alt text](https://i.postimg.cc/0QFtvWwY/image.png)
-![alt text](https://i.postimg.cc/qB6bwTPj/image.png)
-![alt text](https://i.postimg.cc/7LQ91sXF/image.png)
-![alt text](https://i.postimg.cc/1XDKQ9PS/image.png)
-![alt text](https://i.postimg.cc/9QmY65k3/image.png)
-![alt text](https://i.postimg.cc/qqc2FjXM/image.png)
-![alt text](https://i.postimg.cc/SKz25gmF/image.png)
+![alt text](https://i.postimg.cc/3Rm2rnr0/image.png)
+![alt text](https://i.postimg.cc/QCjK8Dnv/image.png)
+![alt text](https://i.postimg.cc/xTxN2WGF/image.png)
+![alt text](https://i.postimg.cc/sgbBB7NY/image.png)
+![alt text](https://i.postimg.cc/3NLN3vGD/image.png)
+![alt text](https://i.postimg.cc/m25kq7Rv/image.png)
+![alt text](https://i.postimg.cc/k5r4M92w/image.png)
+![alt text](https://i.postimg.cc/wvgjJVcm/image.png)
+![alt text](https://i.postimg.cc/2yXksfpQ/image.png)
+![alt text](https://i.postimg.cc/dtLt8Dd4/image.png)
+![alt text](https://i.postimg.cc/y8R1b5LR/image.png)
 
 
 
